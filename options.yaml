@@ -1,0 +1,70 @@
+commands:
+  - name: store
+    description: "Store the access token in the system keyring."
+    usage: "gitee-cli store --owner <owner> --token <token>"
+    options:
+      - name: --owner, -o
+        description: "Owner username (required)"
+        required: true
+      - name: --token, -t
+        description: "Access token string (required)"
+        required: true
+
+  - name: create-issue
+    description: "Create a new issue in the specified repository."
+    usage: "gitee-cli create-issue --owner <owner> --repo <repo> --title <title> --body <body> --issue_type <issue_type>"
+    options:
+      - name: --owner, -o
+        description: "Owner username (required)"
+        required: true
+      - name: --repo, -r
+        description: "Repository name (required)"
+        required: true
+      - name: --title, -T
+        description: "Issue title (required)"
+        required: true
+      - name: --body, -b
+        description: "Issue description (required)"
+        required: true
+      - name: --issue_type, -i
+        description: "Issue type (required)"
+        required: true
+
+  - name: update-issue
+    description: "Update an existing issue."
+    usage: "gitee-cli update-issue --owner <owner> --repo <repo> --number <issue_number> [--title <title>] [--body <body>] [--state <state>]"
+    options:
+      - name: --owner, -o
+        description: "Owner username (required)"
+        required: true
+      - name: --repo, -r
+        description: "Repository name (required)"
+        required: true
+      - name: --number, -n
+        description: "Issue number (required)"
+        required: true
+      - name: --title, -T
+        description: "New title (optional)"
+        required: false
+      - name: --body, -b
+        description: "New body/description (optional)"
+        required: false
+      - name: --state, -s
+        description: "New state (e.g., open, closed) (optional)"
+        required: false
+
+  - name: list-issues
+    description: "List all issues in a repository."
+    usage: "gitee-cli list-issues --owner <owner> --repo <repo>"
+    options:
+      - name: --owner, -o
+        description: "Owner username (required)"
+        required: true
+      - name: --repo, -r
+        description: "Repository name (required)"
+        required: true
+
+  - name: help
+    description: "Display this help message."
+    usage: "gitee-cli help"
+
